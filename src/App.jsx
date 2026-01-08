@@ -14,34 +14,130 @@ import woddenBg from "./assets/wodden-bg.jpg";
 import heroBg from "./assets/hero-bg.jpg";
 
 export default function App() {
-  const heroCup = useRef(null);
-  useEffect(() => {
-    const animateCup = gsap.timeline({
-      // Action perform on timeline - GSAP predefined method
-      scrollTrigger: {
-        trigger: ".main",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-    animateCup
-      .to(heroCup.current, { x: -350, y: 800, scale: 0.9, rotate: 4 })
-      .to(heroCup.current, { x: -550, y: 450, scale: 0.8, rotate: -15 });
-  }, []);
+  // const heroCup = useRef(null);
+  // // MatchMedia - GSAP Media Query
+  // const mm = gsap.matchMedia();
+  // useEffect(() => {
+  //   const animateCup = gsap.timeline({
+  //     // Action perform on timeline - GSAP predefined method
+  //     scrollTrigger: {
+  //       trigger: ".page",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: true,
+  //     },
+  //   });
+  //   animateCup
+  //     .to(heroCup.current, { x: -350, y: 745, scale: 0.8, rotate: 4 })
+  //     .to(heroCup.current, { x: -550, y: 450, scale: 0.8, rotate: 25 });
+  // }, []);
 
+  // // Target Screen Sizes on Media Query
+  // mm.add("(max-width:425px)", () => {
+  //   gsap.to(heroCup.current, {
+  //     x: 50,
+  //     y: 1450,
+  //     scale: 0.8,
+  //     rotate: 4,
+  //     scrollTrigger: {
+  //       trigger: ".main",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: true,
+  //     },
+  //   });
+  //   gsap.to(heroCup.current, {
+  //     x: 10,
+  //     y: 1420,
+  //     scale: 1.8,
+  //     rotate: 5,
+  //     scrollTrigger: {
+  //       trigger: ".page",
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       scrub: true,
+  //     },
+  //   });
+  // });
+
+  const heroCup = useRef(null);
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    // Desktop / Default
+    mm.add("(min-width: 426px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".page",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+
+      tl.to(heroCup.current, {
+        x: -350,
+        y: 745,
+        scale: 0.8,
+        rotate: 4,
+      }).to(heroCup.current, {
+        x: -550,
+        y: 450,
+        scale: 0.8,
+        rotate: 25,
+      });
+    });
+
+    // Mobile
+    mm.add("(max-width: 425px)", () => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".page",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }).to(heroCup.current, {
+        x: 10,
+        y: 1680,
+        scale: 1.5,
+        rotate: 5,
+      });
+    });
+
+    // Tablet 
+    // Mobile
+    mm.add("(max-width: 625px)", () => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".page",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }).to(heroCup.current, {
+        x: 30,
+        y: 1500,
+        scale: 1,
+        rotate: 5,
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
   return (
     <>
-      <div className="main">
+      <div className="page">
         {/* NAVBAR SECTION START */}
-        <nav className="bg-white fixed w-full z-20 top-0 start-0">
+        <nav className="bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl  fixed w-full z-20 top-0 start-0">
           <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a
               href="#"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-14" alt="Flowbite Logo" />
-              <span className="self-center text-xl text-heading font-semibold whitespace-nowrap logo">
+              <span className="self-center sm:text-[20px] md:text-2xl lg:text-4xl text-heading font-semibold whitespace-nowrap logo">
                 Beanory
               </span>
             </a>
@@ -204,40 +300,42 @@ export default function App() {
         </nav>
         {/* NAVBAR SECTION END */}
         {/* HERO SECTION START */}
-        <section className="body-font lg:mx-38 mt-10">
-          <div className="container flex px-5 py-34 md:flex-row flex-col items-center">
-            <div className="lg\:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-              <h1 className="title-font sm:text-7xl text-3xl font-bold hero-heading text-black">
+        <section className="min-h-screen flex items-center px-6 pt-32">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 w-full">
+            {/* LEFT CONTENT */}
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 className="lg:text-7xl text-4xl font-bold text-black mb-4">
                 Best coffee
               </h1>
-              <br className="hidden lg:inline-block" />
-              <span className="sub-heading text-[#964B00]">
-                Make <span className="text-black hero-text">your day</span>{" "}
-                great <span className="text-black hero-text">with our</span>{" "}
-                coffee!
-              </span>
-              <p className="mb-8 leading-relaxed text-black">
-                Lorem ipsum dolor sit amet, consectetur odipiscing elit, <br />{" "}
-                sed do eiusmod tempor incididunt ut labore et dolore <br />{" "}
+
+              <h2 className="lg:text-7xl text-3xl leading-tight text-[#964B00]">
+                Make <span className="text-black">your day</span> great{" "}
+                <span className="text-black">with our</span> coffee!
+              </h2>
+
+              <p className="mt-6 mb-8 text-black max-w-md mx-auto lg:mx-0">
+                Lorem ipsum dolor sit amet, consectetur odipiscing elit, <br />
+                sed do eiusmod tempor incididunt ut labore et dolore <br />
                 magna aliqua. Ut enim ad minim veniam
               </p>
-              <div className="flex justify-center">
-                <button className="inline-flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-transparent hover:border-2 hover:border-black hover:text-black  rounded text-lg cursor-pointer">
-                  Order Now
-                </button>
-              </div>
+
+              <button className="bg-black text-white px-8 py-3 rounded text-lg hover:bg-transparent hover:text-black hover:border-2 hover:border-black transition">
+                Order Now
+              </button>
             </div>
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 lg:ms-28">
-              {/* <img
-                className="object-cover object-center absolute heroBg"
-                src={heroBg}
-                alt=""
-              /> */}
+
+            {/* RIGHT IMAGE */}
+            <div
+              className="w-full lg:w-1/2 h-\[320px\] sm\:h-\[420px\] lg\:h-\[520px\]
+                 bg-[url('./assets/hero-beans.png')]
+                 bg-cover bg-center bg-no-repeat
+                 rounded-2xl flex items-center justify-center"
+            >
               <img
-                className="object-cover object-center relative rounded hero-img"
                 ref={heroCup}
-                alt="hero"
                 src={heroImg}
+                alt="hero"
+                className="w-3/4 object-contain"
               />
             </div>
           </div>
@@ -382,7 +480,7 @@ export default function App() {
               </div>
             </div>
             <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
-              <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+              <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img src={espresso} className="h-20 w-20 rounded-full" alt="" />
               </div>
               <div className="grow sm:text-left text-center mt-6 sm:mt-0">
@@ -400,7 +498,7 @@ export default function App() {
           <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
             <div className="w-64 shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
               <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <img src="" alt="" />
+                {/* <img src="" alt="" /> */}
                 <span className="ml-3 text-xl logo">Beanory</span>
               </a>
               <p className="mt-2 text-sm text-[#964B00]">

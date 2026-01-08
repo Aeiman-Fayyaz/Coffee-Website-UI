@@ -2,15 +2,13 @@
 
 .logo{
   font-family: "Borel", cursive;
-  font-size: 30px;
-  margin-top: 25px;
+  margin-top: 26px;
 }
 .hero-heading{
      font-family: "Meow Script", cursive;
 }
 .sub-heading{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
     letter-spacing: normal;
     font-weight: 300;
 }
@@ -24,4 +22,11 @@
   margin-top: 0;
   height: 600px;
   width: 500px;
+}
+
+@media (min-width:768px) {
+  .cups{
+    position: relative;
+    bottom: 130px;
+  }
 }
