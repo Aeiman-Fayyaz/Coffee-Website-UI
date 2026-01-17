@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AOS from "aos";
+import "aos/dist/aos.css";
 gsap.registerPlugin(ScrollTrigger);
 import "./App.css";
 import logo from "./assets/logo.png";
@@ -25,6 +27,14 @@ import chocolateFudge from "./assets/chocolate-fudge.jpg";
 import lavaCake from "./assets/lava-cake.jpg";
 
 export default function App() {
+  // AOS ANIMATION
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 1500,
+      easing: "linear",
+    });
+  }, []);
   const heroCup = useRef(null);
 
   useGSAP(() => {
@@ -194,11 +204,11 @@ export default function App() {
                 <input
                   type="text"
                   id="input-group-1"
-                  className="block w-full ps-9 pe-3 py-2\.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-2.5 py-2 shadow-xs placeholder:text-body"
+                  className="block w-full ps-9 pe-3 py-2\.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-4xl focus:ring-brand focus:border-brand px-2.5 py-2 shadow-xs placeholder:text-body"
                   placeholder="Search"
                 />
               </div>
-              <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary text-xl">
+              <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary text-xl">
                 <li>
                   <a
                     href="#"
@@ -291,7 +301,7 @@ export default function App() {
         {/* CARD SECTION START */}
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-col">
+            <div className="flex flex-col" data-aos="fade-down">
               <div className="h-1 bg-gray-200 rounded overflow-hidden">
                 <div className="w-24 h-full bg-[#964B00]"></div>
               </div>
@@ -308,7 +318,7 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95" data-aos="fade-down">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -344,7 +354,7 @@ export default function App() {
                   Order Now
                 </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95" data-aos="fade-down">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -371,7 +381,7 @@ export default function App() {
         {/* CARD SECTION END */}
         {/* COFFEE SECTION START */}
         <section className="container px-5 py-10 mx-auto body-font" id="coffee">
-          <div className="text-center mb-20">
+          <div className="text-center mb-20" data-aos="fade-down">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-[#964B00] mb-4">
               Best Coffee
             </h1>
@@ -380,7 +390,7 @@ export default function App() {
             </p>
           </div>
           <div className="container px-5 mx-auto">
-            <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col" data-aos="fade-down">
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={cappucino}
@@ -407,7 +417,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+            <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col" data-aos="fade-down">
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={espresso}
@@ -444,7 +454,7 @@ export default function App() {
             </h1>
           </div>
           <div className="grid gap-3 mx-15 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
               <div className="relative">
                 <img
                   src={milkTea}
@@ -476,7 +486,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
               <div className="relative">
                 <img
                   src={organicTea}
@@ -506,7 +516,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
               <div className="relative">
                 <img
                   src={pinkTea}
@@ -551,7 +561,7 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={macchiatoCoffee}
                   alt="Macchiato Coffee"
@@ -573,7 +583,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={icedCoffee}
                   alt="Iced Coffee"
@@ -594,7 +604,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={hazelnutCoffee}
                   alt="Hazelnut Coffee"
@@ -616,7 +626,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={irishCoffee}
                   alt="Irish Coffee"
@@ -637,7 +647,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={vanillaLatte}
                   alt="Vanilla Latte"
@@ -659,7 +669,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={chesseCake}
                   alt="Cheese Cake"
@@ -680,7 +690,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={chocolateBrownie}
                   alt=" Chocolate Brownie"
@@ -704,7 +714,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={chocolateFudge}
                   alt=" Chocolate Fudge Cake"
@@ -728,7 +738,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
                 <img
                   src={lavaCake}
                   alt="Lava Cake"
@@ -898,8 +908,12 @@ export default function App() {
                 <h2 className="title-font font-semibold text-gray-900 mb-4">
                   Get in Touch
                 </h2>
-                <p className="text-sm hover:text-[#964B00] cursor-pointer">📍 Freshly brewed, every day</p>
-                <p className="text-sm mt-2 hover:text-[#964B00] cursor-pointer">📧 hello@beanory.com</p>
+                <p className="text-sm hover:text-[#964B00] cursor-pointer">
+                  📍 Freshly brewed, every day
+                </p>
+                <p className="text-sm mt-2 hover:text-[#964B00] cursor-pointer">
+                  📧 hello@beanory.com
+                </p>
               </div>
             </div>
           </div>
