@@ -23,6 +23,16 @@
   height: 600px;
   width: 500px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: slightly slow down the feel on supported browsers */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 @media (min-width:768px) {
   .cups{

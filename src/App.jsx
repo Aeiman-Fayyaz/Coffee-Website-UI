@@ -10,63 +10,28 @@ import cappucino from "./assets/Capuccino.jpg";
 import espresso from "./assets/espresso.jpg";
 import creamyCoffee from "./assets/creamy-coffee.jpg";
 import blackCoffee from "./assets/black-coffee.jpg";
-import woddenBg from "./assets/wodden-bg.jpg";
-import heroBg from "./assets/hero-bg.jpg";
+import woddenBg from "./assets/beans.jpg";
+import milkTea from "./assets/milk-tea.jpg";
+import organicTea from "./assets/organic-tea.jpg";
+import pinkTea from "./assets/pink-tea.jpg";
+import macchiatoCoffee from "./assets/macchiato-coffee.jpg";
+import icedCoffee from "./assets/iced-coffee.jpg";
+import hazelnutCoffee from "./assets/hazelnut-coffee.jpg";
+import irishCoffee from "./assets/irish-coffee.jpg";
+import vanillaLatte from "./assets/vanilla-latte.jpg";
+import chesseCake from "./assets/chesse-cake.jpg";
+import chocolateBrownie from "./assets/chocolate-brownie.jpg";
+import chocolateFudge from "./assets/chocolate-fudge.jpg";
+import lavaCake from "./assets/lava-cake.jpg";
 
 export default function App() {
-  // const heroCup = useRef(null);
-  // // MatchMedia - GSAP Media Query
-  // const mm = gsap.matchMedia();
-  // useEffect(() => {
-  //   const animateCup = gsap.timeline({
-  //     // Action perform on timeline - GSAP predefined method
-  //     scrollTrigger: {
-  //       trigger: ".page",
-  //       start: "top top",
-  //       end: "bottom bottom",
-  //       scrub: true,
-  //     },
-  //   });
-  //   animateCup
-  //     .to(heroCup.current, { x: -350, y: 745, scale: 0.8, rotate: 4 })
-  //     .to(heroCup.current, { x: -550, y: 450, scale: 0.8, rotate: 25 });
-  // }, []);
-
-  // // Target Screen Sizes on Media Query
-  // mm.add("(max-width:425px)", () => {
-  //   gsap.to(heroCup.current, {
-  //     x: 50,
-  //     y: 1450,
-  //     scale: 0.8,
-  //     rotate: 4,
-  //     scrollTrigger: {
-  //       trigger: ".main",
-  //       start: "top top",
-  //       end: "bottom bottom",
-  //       scrub: true,
-  //     },
-  //   });
-  //   gsap.to(heroCup.current, {
-  //     x: 10,
-  //     y: 1420,
-  //     scale: 1.8,
-  //     rotate: 5,
-  //     scrollTrigger: {
-  //       trigger: ".page",
-  //       start: "top top",
-  //       end: "bottom bottom",
-  //       scrub: true,
-  //     },
-  //   });
-  // });
-
   const heroCup = useRef(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
-    // Desktop / Default
-    mm.add("(min-width: 426px)", () => {
+    // LAPTOP / DESKTOP ONLY
+    mm.add("(min-width: 1024px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".page",
@@ -77,10 +42,10 @@ export default function App() {
       });
 
       tl.to(heroCup.current, {
-        x: -350,
-        y: 745,
+        x: -330,
+        y: 1000,
         scale: 0.8,
-        rotate: 4,
+        rotate: 5,
       }).to(heroCup.current, {
         x: -550,
         y: 450,
@@ -89,43 +54,20 @@ export default function App() {
       });
     });
 
-    // Mobile
-    mm.add("(max-width: 425px)", () => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".page",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      }).to(heroCup.current, {
-        x: 10,
-        y: 1680,
-        scale: 1.5,
-        rotate: 5,
-      });
-    });
-
-    // Tablet 
-    // Mobile
-    mm.add("(max-width: 625px)", () => {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".page",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      }).to(heroCup.current, {
-        x: 30,
-        y: 1500,
+    // TABLET + MOBILE (NO ANIMATION)
+    mm.add("(max-width: 1023px)", () => {
+      gsap.set(heroCup.current, {
+        clearProps: "all", // removes GSAP transforms
+        x: 0,
+        y: 0,
         scale: 1,
-        rotate: 5,
+        rotate: 0,
       });
     });
 
     return () => mm.revert();
   }, []);
+
   return (
     <>
       <div className="page">
@@ -136,7 +78,11 @@ export default function App() {
               href="#"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <img src={logo} className="h-14" alt="Flowbite Logo" />
+              <img
+                src={logo}
+                className="h-14 animate-bounce"
+                alt="Benory Logo"
+              />
               <span className="self-center sm:text-[20px] md:text-2xl lg:text-4xl text-heading font-semibold whitespace-nowrap logo">
                 Beanory
               </span>
@@ -256,7 +202,16 @@ export default function App() {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                    className="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0 hover:border-b hover:border-[#964B00]"
+                    aria-current="page"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#coffee"
+                    className="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0 hover:border-b hover:border-[#964B00]"
                     aria-current="page"
                   >
                     Coffee
@@ -264,32 +219,24 @@ export default function App() {
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                    href="#tea"
+                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:border-b hover:border-[#964B00]"
                   >
                     Tea
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                    href="#menu"
+                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:border-b hover:border-[#964B00]"
                   >
                     Menu
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
-                  >
-                    Order
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                    href="#contact"
+                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:border-b hover:border-[#964B00]"
                   >
                     Contact
                   </a>
@@ -326,14 +273,15 @@ export default function App() {
 
             {/* RIGHT IMAGE */}
             <div
-              className="w-full lg:w-1/2 h-\[320px\] sm\:h-\[420px\] lg\:h-\[520px\]
-                 bg-[url('./assets/hero-beans.png')]
-                 bg-cover bg-center bg-no-repeat
-                 rounded-2xl flex items-center justify-center"
+              className="w-full lg:w-1/2 h-\[320px\] sm\:h-\[420px\] lg:h-screen bg-[url('./assets/hero-beans.png')]
+        bg-cover bg-center lg:bg-right bg-no-repeat
+        rounded-2xl
+        flex items-center justify-center
+      "
             >
               <img
-                ref={heroCup}
                 src={heroImg}
+                ref={heroCup}
                 alt="hero"
                 className="w-3/4 object-contain"
               />
@@ -346,21 +294,22 @@ export default function App() {
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col">
               <div className="h-1 bg-gray-200 rounded overflow-hidden">
-                <div className="w-24 h-full bg-indigo-500"></div>
+                <div className="w-24 h-full bg-[#964B00]"></div>
               </div>
               <div className="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
                 <h1 className="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">
-                  Space The Final Frontier
+                  Beanory Speciality
                 </h1>
                 <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-                  Street art subway tile salvia four dollar toast bitters
-                  selfies quinoa yuccie synth meditation iPhone intelligentsia
-                  prism tofu. Viral gochujang bitters dreamcatcher.
+                  At Beanory, we curate premium coffee experiences using
+                  ethically sourced beans, slow roasting techniques, and expert
+                  craftsmanship. Every cup is designed to deliver rich aroma,
+                  balanced flavor, and a memorable coffee moment.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -368,57 +317,35 @@ export default function App() {
                     src={creamyCoffee}
                   />
                 </div>
-                <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                  Shooting Stars
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2 mt-5">
+                  Creamy Latte Blend
                 </h2>
-                <p className="text-base leading-relaxed mt-2">
-                  Swag shoivdigoitch literally meditation subway tile tumblr
-                  cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                  ethical XOXO lumbersexual.
+                <p className="text-base leading-relaxed mt-2 mb-8">
+                  Creamy latte includes{" "}
+                  <span className="text-[#964B00] fw-bold">
+                    espresso, steamed milk, and a sweetener.
+                  </span>
                 </p>
-                <a className="text-indigo-500 inline-flex items-center mt-3">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <button className="bg-[#964B00] p-3 text-white border-0 rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                  Order Now
+                </button>
               </div>
               <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img src={woddenBg} alt="" />
                 </div>
-                <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                  The Catalyzer
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2 mt-5">
+                  Artisan Roasted Beans
                 </h2>
-                <p className="text-base leading-relaxed mt-2">
-                  Swag shoivdigoitch literally meditation subway tile tumblr
-                  cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                  ethical XOXO lumbersexual.
+                <p className="text-base leading-relaxed mt-2 mb-8">
+                  Perfect for brewing fresh coffee with a deep, aromatic
+                  profile.
                 </p>
-                <a className="text-indigo-500 inline-flex items-center mt-3">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <button className="bg-[#964B00] p-3 text-white border-0 rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                  Order Now
+                </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -426,35 +353,25 @@ export default function App() {
                     src={blackCoffee}
                   />
                 </div>
-                <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                  The 400 Blows
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2 mt-5">
+                  Classic Black Coffee
                 </h2>
-                <p className="text-base leading-relaxed mt-2">
-                  Swag shoivdigoitch literally meditation subway tile tumblr
-                  cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                  ethical XOXO lumbersexual.
+                <p className="text-base leading-relaxed mt-2 mb-8">
+                  A strong and pure{" "}
+                  <span className="text-[#964B00] fw-bold">
+                    black coffee made for true coffee lovers.
+                  </span>
                 </p>
-                <a className="text-indigo-500 inline-flex items-center mt-3">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                <button className="bg-[#964B00] p-3 text-white border-0 rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                  Order Now
+                </button>
               </div>
             </div>
           </div>
         </section>
         {/* CARD SECTION END */}
         {/* COFFEE SECTION START */}
-        <section className="container px-5 mx-auto body-font">
+        <section className="container px-5 py-10 mx-auto body-font" id="coffee">
           <div className="text-center mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-[#964B00] mb-4">
               Best Coffee
@@ -468,207 +385,541 @@ export default function App() {
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={cappucino}
-                  className="h-20 w-20 rounded-full"
-                  alt=""
+                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 cursor-pointer"
+                  alt="Cappucino"
                 />
               </div>
               <div className="grow sm:text-left text-center mt-6 sm:mt-0">
                 <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2">
                   Cappucino
                 </h2>
-                <p className="leading-relaxed text-base">Best Serves</p>
+                <p className="leading-relaxed text-gray-500 mb-5">
+                  Best Serves includes{" "}
+                  <span className="text-[#964B00] fw-bold">
+                    {" "}
+                    espresso, steamed milk, rich milk foam.
+                  </span>
+                </p>
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-black">PKR 500</span>
+                  <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                    Order
+                  </button>
+                </div>
               </div>
             </div>
             <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
-                <img src={espresso} className="h-20 w-20 rounded-full" alt="" />
+                <img
+                  src={espresso}
+                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 cursor-pointer"
+                  alt="Espresso"
+                />
               </div>
               <div className="grow sm:text-left text-center mt-6 sm:mt-0">
                 <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2">
                   Espresso
                 </h2>
-                <p className="leading-relaxed text-base">Black coffee lovers</p>
+                <p className="leading-relaxed text-gray-500 mb-5">
+                  Black coffee lovers includes{" "}
+                  <span className="text-[#964B00] fw-bold">
+                    finely ground coffee beans and hot water
+                  </span>
+                </p>
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-black">PKR 450</span>
+                  <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                    Order
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </section>
         {/* COFFEE SECTION END */}
-        {/* FOOTER SECTION START */}
-        <footer className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-            <div className="w-64 shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-              <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                {/* <img src="" alt="" /> */}
-                <span className="ml-3 text-xl logo">Beanory</span>
-              </a>
-              <p className="mt-2 text-sm text-[#964B00]">
-                Drink Coffee, Relax Your Mind
-              </p>
+        {/* TEA SECTION START */}
+        <section className=" bg-[#FFF7F0] pb-10" id="tea">
+          <div className="container mx-auto px-4 py-12 text-center mb-20">
+            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-[#964B00] ">
+              Tea Lovers
+            </h1>
+          </div>
+          <div className="grid gap-3 mx-15 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+              <div className="relative">
+                <img
+                  src={milkTea}
+                  alt="Milk Tea"
+                  className="w-full h-56 object-cover"
+                />
+                <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  SPECIAL
+                </span>
+              </div>
+
+              <div className="p-5">
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2">
+                  Rich, milky black tea
+                </h2>
+                <p className="text-sm text-gray-500 mb-8">
+                  Doodh Patti includes{" "}
+                  <span className="text-[#964B00] fw-bold">
+                    {" "}
+                    black tea, milk, sugar.{" "}
+                  </span>
+                </p>
+
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-black">PKR 450</span>
+                  <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                    Order
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-              <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                  CATEGORIES
-                </h2>
-                <nav className="list-none mb-10">
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      First Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Second Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Third Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Fourth Link
-                    </a>
-                  </li>
-                </nav>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+              <div className="relative">
+                <img
+                  src={organicTea}
+                  alt="Organic Tea"
+                  className="w-full h-56 object-cover"
+                />
+                <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  NEW
+                </span>
               </div>
-              <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                  CATEGORIES
+
+              <div className="p-5">
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2">
+                  Organic Green Tea
                 </h2>
-                <nav className="list-none mb-10">
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      First Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Second Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Third Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Fourth Link
-                    </a>
-                  </li>
-                </nav>
+                <p className="text-sm text-gray-500 mb-8">
+                  Fresh organic{" "}
+                  <span className="text-[#964B00] fw-bold"> tea leaves </span>{" "}
+                  for a healthy lifestyle.
+                </p>
+
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-black">PKR 450</span>
+                  <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                    Order
+                  </button>
+                </div>
               </div>
-              <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                  CATEGORIES
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+              <div className="relative">
+                <img
+                  src={pinkTea}
+                  alt="Pink Tea"
+                  className="w-full h-56 object-cover"
+                />
+                <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  HOT
+                </span>
+              </div>
+
+              <div className="p-5">
+                <h2 className="text-[#964B00] text-lg title-font font-extrabold mb-2">
+                  Kashmiri Pink Tea
                 </h2>
-                <nav className="list-none mb-10">
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      First Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Second Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Third Link
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-600 hover:text-gray-800">
-                      Fourth Link
-                    </a>
-                  </li>
-                </nav>
+                <p className="text-sm text-gray-500 mb-8">
+                  <span className="text-[#964B00] fw-bold">Strong flavor</span>{" "}
+                  with a rich traditional aroma & dry fruits.
+                </p>
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-black">PKR 450</span>
+                  <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                    Order
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="bg-gray-100">
-            <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-              <p className="text-gray-500 text-sm text-center sm:text-left">
-                © 2020 Tailblocks —
-                <a
-                  href="https://twitter.com/knyttneve"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 ml-1"
-                  target="_blank"
-                >
-                  @knyttneve
-                </a>
+        </section>
+        {/* TEA SECTION END */}
+        {/* MENU CARD SECTION START */}
+        <section className="bg-[#FFF7F0] py-24" id="menu">
+          <div className="container px-5 mx-auto">
+            <div className="text-center mb-16">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#964B00] mb-4">
+                Coffee & Sweets Menu
+              </h1>
+              <p className="text-black leading-relaxed lg:w-2/3 mx-auto">
+                Perfect pairings of freshly brewed coffee with handcrafted
+                desserts.
               </p>
-              <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-                <a className="text-gray-500">
-                  <svg
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={macchiatoCoffee}
+                  alt="Macchiato Coffee"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Macchiato Coffee
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    A bold espresso lightly topped with a small amount of
+                    steamed milk, delivering a rich and intense flavor.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 450</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={icedCoffee}
+                  alt="Iced Coffee"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Iced Coffee
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Espresso blended with steamed milk and rich foam.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 550</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={hazelnutCoffee}
+                  alt="Hazelnut Coffee"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Hazelnut Coffee
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Smooth coffee infused with a warm, nutty hazelnut flavor for
+                    a rich and aromatic experience.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 600</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={irishCoffee}
+                  alt="Irish Coffee"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Irish Coffee
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 350</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={vanillaLatte}
+                  alt="Vanilla Latte"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Vanilla Latte
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    A smooth blend of espresso and steamed milk, delicately
+                    flavored with sweet vanilla syrup.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 450</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={chesseCake}
+                  alt="Cheese Cake"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Classic Cheesecake
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Creamy cheesecake with a buttery biscuit base.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">PKR 500</span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={chocolateBrownie}
+                  alt=" Chocolate Brownie"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Chocolate Brownie
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">
+                      PKR 350{" "}
+                      <small className="font-light">per piece</small>{" "}
+                    </span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={chocolateFudge}
+                  alt=" Chocolate Fudge Cake"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Chocolate Fudge Cake
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">
+                      PKR 550{" "}
+                      <small className="font-light">per piece</small>{" "}
+                    </span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <img
+                  src={lavaCake}
+                  alt="Lava Cake"
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h2 className="text-[#964B00] text-lg font-extrabold mb-2">
+                    Lava Cake
+                  </h2>
+                  <p className="text-gray-500 mb-4">
+                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-black">
+                      PKR 620{" "}
+                      <small className="font-light">per piece</small>{" "}
+                    </span>
+                    <button className="bg-[#964B00] px-4 py-2 text-white rounded-4xl hover:bg-transparent hover:border-2 hover:border-[#964B00] hover:text-[#964B00]">
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* MENU CARD SECTION END */}
+        {/* CONTACT SECTION START */}
+        <section id="contact" className="bg-[#FFF7F0] py-24">
+          <div className="container px-5 mx-auto">
+            {/* Heading */}
+            <div className="text-center mb-16">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#964B00] mb-4">
+                Contact Beanory
+              </h1>
+              <p className="text-black leading-relaxed lg:w-2/3 mx-auto">
+                Have a question, feedback, or custom order request? We would
+                love to hear from you.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-black mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#964B00]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-black mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#964B00]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-black mb-1">
+                    Contact no
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Enter your contact no"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#964B00]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-black mb-1">
+                    Order Details
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Order Deatils"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#964B00]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-black mb-1">
+                    Instructions
+                  </label>
+                  <textarea
+                    rows="5"
+                    placeholder="Write your instructions here..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#964B00]"
+                  ></textarea>
+                </div>
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="bg-[#964B00] text-white px-10 py-3 rounded-full text-lg font-medium hover:bg-transparent hover:text-[#964B00] hover:border-2 hover:border-[#964B00] transition"
                   >
-                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                  </svg>
-                </a>
-                <a className="ml-3 text-gray-500">
-                  <svg
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                  </svg>
-                </a>
-                <a className="ml-3 text-gray-500">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <rect
-                      width="20"
-                      height="20"
-                      x="2"
-                      y="2"
-                      rx="5"
-                      ry="5"
-                    ></rect>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                  </svg>
-                </a>
-                <a className="ml-3 text-gray-500">
-                  <svg
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="0"
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="none"
-                      d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                    ></path>
-                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                  </svg>
-                </a>
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        {/* CONTACT SECTION END */}
+        {/* FOOTER SECTION START */}
+        <footer className=" text-gray-700 body-font">
+          <div className="container px-5 py-20 mx-auto">
+            <div className="flex flex-wrap md:text-left text-center order-first">
+              <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+                <h2 className="text-xl font-semibold text-[#964B00] logo">
+                  Beanory
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                  Crafted coffee for calm moments. From rich espresso to creamy
+                  blends, Beanory is your daily coffee escape.
+                </p>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+                <h2 className="title-font font-semibold text-gray-900 mb-4">
+                  Our Menu
+                </h2>
+                <nav className="list-none space-y-2">
+                  <li className="hover:text-[#964B00] cursor-pointer">
+                    Cappuccino
+                  </li>
+                  <li className="hover:text-[#964B00] cursor-pointer">
+                    Espresso
+                  </li>
+                  <li className="hover:text-[#964B00] cursor-pointer">Latte</li>
+                  <li className="hover:text-[#964B00] cursor-pointer">
+                    Black Coffee
+                  </li>
+                </nav>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+                <h2 className="title-font font-semibold text-gray-900 mb-4">
+                  Quick Links
+                </h2>
+                <nav className="list-none space-y-2">
+                  <a href="#">
+                    <li className="hover:text-[#964B00] cursor-pointer">
+                      Home
+                    </li>
+                  </a>
+                  <a href="#coffee">
+                    <li className="hover:text-[#964B00] cursor-pointer">
+                      Coffee
+                    </li>
+                  </a>
+                  <a href="#tea">
+                    <li className="hover:text-[#964B00] cursor-pointer">Tea</li>
+                  </a>
+                  <a href="#menu">
+                    <li className="hover:text-[#964B00] cursor-pointer">
+                      Menu
+                    </li>
+                  </a>
+                  <a href="#contact">
+                    <li className="hover:text-[#964B00] cursor-pointer">
+                      Contact
+                    </li>
+                  </a>
+                </nav>
+              </div>
+              <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+                <h2 className="title-font font-semibold text-gray-900 mb-4">
+                  Get in Touch
+                </h2>
+                <p className="text-sm hover:text-[#964B00] cursor-pointer">📍 Freshly brewed, every day</p>
+                <p className="text-sm mt-2 hover:text-[#964B00] cursor-pointer">📧 hello@beanory.com</p>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 bg-[#964B00]">
+            <div className="container mx-auto py-4 px-5 flex flex-col sm:flex-row items-center">
+              <p className="text-sm text-white">
+                © 2026 Beanory. All rights reserved.{" "}
+                <span className="fw-bold"> Developed by Aeiman Fayyaz</span>
+              </p>
+
+              <span className="inline-flex sm:ml-auto mt-2 sm:mt-0 space-x-4">
+                <a className="text-white hover:text-black">Facebook</a>
+                <a className="text-white hover:text-black">Instagram</a>
+                <a className="text-white hover:text-black">Twitter</a>
               </span>
             </div>
           </div>
         </footer>
+
         {/* FOOTER SECTION END */}
       </div>
     </>
