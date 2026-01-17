@@ -249,7 +249,6 @@ export default function App() {
         {/* HERO SECTION START */}
         <section className="min-h-screen flex items-center px-6 pt-32">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 w-full">
-            {/* LEFT CONTENT */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h1 className="lg:text-7xl text-4xl font-bold text-black mb-4">
                 Best coffee
@@ -309,7 +308,7 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -330,7 +329,7 @@ export default function App() {
                   Order Now
                 </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img src={woddenBg} alt="" />
                 </div>
@@ -345,7 +344,7 @@ export default function App() {
                   Order Now
                 </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 active:scale-90">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -385,7 +384,7 @@ export default function App() {
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={cappucino}
-                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 cursor-pointer"
+                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 active:scale-95 cursor-pointer"
                   alt="Cappucino"
                 />
               </div>
@@ -412,7 +411,7 @@ export default function App() {
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={espresso}
-                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 cursor-pointer"
+                  className="h-20 w-20 rounded-full transition-transform duration-500 hover:scale-120 active:scale-95 cursor-pointer"
                   alt="Espresso"
                 />
               </div>
@@ -445,7 +444,7 @@ export default function App() {
             </h1>
           </div>
           <div className="grid gap-3 mx-15 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
               <div className="relative">
                 <img
                   src={milkTea}
@@ -477,7 +476,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
               <div className="relative">
                 <img
                   src={organicTea}
@@ -507,7 +506,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95">
               <div className="relative">
                 <img
                   src={pinkTea}
@@ -552,7 +551,7 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={macchiatoCoffee}
                   alt="Macchiato Coffee"
@@ -574,7 +573,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={icedCoffee}
                   alt="Iced Coffee"
@@ -595,7 +594,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={hazelnutCoffee}
                   alt="Hazelnut Coffee"
@@ -617,7 +616,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={irishCoffee}
                   alt="Irish Coffee"
@@ -638,7 +637,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={vanillaLatte}
                   alt="Vanilla Latte"
@@ -660,7 +659,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={chesseCake}
                   alt="Cheese Cake"
@@ -681,7 +680,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={chocolateBrownie}
                   alt=" Chocolate Brownie"
@@ -705,7 +704,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={chocolateFudge}
                   alt=" Chocolate Fudge Cake"
@@ -729,7 +728,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95">
                 <img
                   src={lavaCake}
                   alt="Lava Cake"
