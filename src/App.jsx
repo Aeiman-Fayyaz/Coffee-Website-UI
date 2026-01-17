@@ -345,7 +345,7 @@ export default function App() {
                   Order Now
                 </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90">
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 active:scale-90">
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
