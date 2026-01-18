@@ -1,16 +1,32 @@
-# React + Vite
+# BEANORY - Coffee Theme Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Beanory is a modern, responsive frontend web application designed to deliver a clean and engaging user experience. The project focuses purely on the client-side interface, animations, and responsiveness, and is deployed on Vercel.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img width="1559" height="729" alt="image" src="https://github.com/user-attachments/assets/32bdce62-0039-4e10-87b7-9f9c998f75a4" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Live Demo
 
-## Expanding the ESLint configuration
+🔗 https://beanory.vercel.app/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# 🚀 Features
+
+- Fully responsive UI (mobile, tablet, desktop)
+- Modern layout and clean design
+- Smooth animations and transitions
+- Reusable component-based structure
+- Optimized for performance and accessibility
+- Deployed on Vercel
+
+# 📍 Tech Stack
+
+- Framework / Library: React
+- Styling: Tailwind CSS
+- Animations: GSAP / AOS
+- Build Tool: Vite
+
+# 📞 Contact Info
+
+- Email: aeimanfayyaz2002@gmail.com
