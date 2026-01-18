@@ -25,6 +25,10 @@ import chesseCake from "./assets/chesse-cake.jpg";
 import chocolateBrownie from "./assets/chocolate-brownie.jpg";
 import chocolateFudge from "./assets/chocolate-fudge.jpg";
 import lavaCake from "./assets/lava-cake.jpg";
+import headBarista from "./assets/head-barista.jpeg";
+import coffeeRoaster from "./assets/coffee-roaster.jpg";
+import baker from "./assets/baker.avif";
+import cafeManager from "./assets/cafe-manager.jpg";
 
 export default function App() {
   // AOS ANIMATION
@@ -103,7 +107,7 @@ export default function App() {
                 data-collapse-toggle="navbar-search"
                 aria-controls="navbar-search"
                 aria-expanded="false"
-                className="flex items-center justify-center md:hidden text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-2 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm w-10 h-10 focus:outline-none"
+                className="flex items-center justify-center md:hidden text-body hover:text-heading bg-transparent  hover:bg-neutral-secondary-medium focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm w-10 h-10 focus:outline-none"
               >
                 <svg
                   className="w-6 h-6"
@@ -155,7 +159,7 @@ export default function App() {
               <button
                 data-collapse-toggle="navbar-search"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none "
                 aria-controls="navbar-search"
                 aria-expanded="false"
               >
@@ -245,6 +249,14 @@ export default function App() {
                 </li>
                 <li>
                   <a
+                    href="#team"
+                    className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:border-b hover:border-[#964B00]"
+                  >
+                    Team
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#contact"
                     className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:border-b hover:border-[#964B00]"
                   >
@@ -318,7 +330,10 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95" data-aos="fade-down">
+              <div
+                className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95"
+                data-aos="fade-down"
+              >
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -354,7 +369,10 @@ export default function App() {
                   Order Now
                 </button>
               </div>
-              <div className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95" data-aos="fade-down">
+              <div
+                className="p-4 md:w-1/3 sm:mb-0 mb-6 transition-transform duration-500 hover:scale-90 active:scale-95"
+                data-aos="fade-down"
+              >
                 <div className="rounded-lg h-64 overflow-hidden">
                   <img
                     alt="content"
@@ -390,7 +408,10 @@ export default function App() {
             </p>
           </div>
           <div className="container px-5 mx-auto">
-            <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col" data-aos="fade-down">
+            <div
+              className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col"
+              data-aos="fade-down"
+            >
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={cappucino}
@@ -417,7 +438,10 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col" data-aos="fade-down">
+            <div
+              className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col"
+              data-aos="fade-down"
+            >
               <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 shrink-0">
                 <img
                   src={espresso}
@@ -454,7 +478,10 @@ export default function App() {
             </h1>
           </div>
           <div className="grid gap-3 mx-15 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+            <div
+              className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95"
+              data-aos="fade-down"
+            >
               <div className="relative">
                 <img
                   src={milkTea}
@@ -486,7 +513,10 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+            <div
+              className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95"
+              data-aos="fade-down"
+            >
               <div className="relative">
                 <img
                   src={organicTea}
@@ -516,7 +546,10 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+            <div
+              className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm transition-transform duration-300 hover:scale-105 active:scale-95"
+              data-aos="fade-down"
+            >
               <div className="relative">
                 <img
                   src={pinkTea}
@@ -561,7 +594,10 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={macchiatoCoffee}
                   alt="Macchiato Coffee"
@@ -583,7 +619,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={icedCoffee}
                   alt="Iced Coffee"
@@ -604,7 +643,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={hazelnutCoffee}
                   alt="Hazelnut Coffee"
@@ -626,7 +668,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={irishCoffee}
                   alt="Irish Coffee"
@@ -647,7 +692,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={vanillaLatte}
                   alt="Vanilla Latte"
@@ -669,7 +717,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={chesseCake}
                   alt="Cheese Cake"
@@ -690,7 +741,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={chocolateBrownie}
                   alt=" Chocolate Brownie"
@@ -714,7 +768,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={chocolateFudge}
                   alt=" Chocolate Fudge Cake"
@@ -725,7 +782,8 @@ export default function App() {
                     Chocolate Fudge Cake
                   </h2>
                   <p className="text-gray-500 mb-4">
-                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                    A rich, moist chocolate cake layered with dense fudge
+                    frosting for an indulgent dessert experience.
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-black">
@@ -738,7 +796,10 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+              <div
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+                data-aos="fade-down"
+              >
                 <img
                   src={lavaCake}
                   alt="Lava Cake"
@@ -749,7 +810,8 @@ export default function App() {
                     Lava Cake
                   </h2>
                   <p className="text-gray-500 mb-4">
-                    Rich chocolate brownie that pairs perfectly with hot coffee.
+                    A rich, molten chocolate dessert with a warm, flowing center
+                    and a soft, delicate exterior.
                   </p>
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-black">
@@ -766,6 +828,100 @@ export default function App() {
           </div>
         </section>
         {/* MENU CARD SECTION END */}
+        {/* TEAM SECTION START */}
+        <section className="text-gray-700 body-font bg-[#fdf6ee]" id="team">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-col text-center w-full mb-20 transition-transform duration-300 hover:scale-105 active:scale-95">
+              <h1 className="text-2xl font-semibold title-font mb-4 text-[#5b3a29] tracking-widest">
+                MEET OUR BARISTAS
+              </h1>
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                Passionate coffee experts dedicated to crafting rich flavors and
+                memorable café experiences.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap -m-4">
+              <div className="p-4 lg:w-1/2">
+                <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+                  <img
+                    className="shrink-0 rounded-full w-40 h-40 object-cover object-center sm:mb-0 mb-4"
+                    src={headBarista}
+                    alt="Head Barista"
+                  />
+                  <div className="grow sm:pl-8">
+                    <h2 className="title-font font-medium text-lg text-[#3e2723]">
+                      K. Ash
+                    </h2>
+                    <h3 className="text-[#8d6e63] mb-3">Head Barista</h3>
+                    <p className="mb-4">
+                      Specialist in espresso blends and latte art with over 8
+                      years of café experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 lg:w-1/2">
+                <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+                  <img
+                    className="shrink-0 rounded-full w-40 h-40 object-cover object-center sm:mb-0 mb-4"
+                    src={coffeeRoaster}
+                    alt="Coffee Roaster"
+                  />
+                  <div className="grow sm:pl-8">
+                    <h2 className="title-font font-medium text-lg text-[#3e2723]">
+                      Mari
+                    </h2>
+                    <h3 className="text-[#8d6e63] mb-3">Coffee Roaster</h3>
+                    <p className="mb-4">
+                      Expert in sourcing and roasting premium coffee beans for
+                      bold, balanced flavors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 lg:w-1/2">
+                <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+                  <img
+                    className="shrink-0 rounded-full w-40 h-40 object-cover object-center sm:mb-0 mb-4"
+                    src={baker}
+                    alt="Baker"
+                  />
+                  <div className="grow sm:pl-8">
+                    <h2 className="title-font font-medium text-lg text-[#3e2723]">
+                      M. Ali
+                    </h2>
+                    <h3 className="text-[#8d6e63] mb-3">Baker</h3>
+                    <p className="mb-4">
+                      Creator of signature cold brews, flavored coffees, and
+                      seasonal specials.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 lg:w-1/2">
+                <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105 active:scale-95" data-aos="fade-down">
+                  <img
+                    className="shrink-0 rounded-full w-40 h-40 object-cover object-center sm:mb-0 mb-4"
+                    src={cafeManager}
+                    alt="Café Manager"
+                  />
+                  <div className="grow sm:pl-8">
+                    <h2 className="title-font font-medium text-lg text-[#3e2723]">
+                      Kami
+                    </h2>
+                    <h3 className="text-[#8d6e63] mb-3">Café Manager</h3>
+                    <p className="mb-4">
+                      Ensures smooth operations, warm hospitality, and a
+                      welcoming café atmosphere.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* TEAM SECTION END */}
         {/* CONTACT SECTION START */}
         <section id="contact" className="bg-[#FFF7F0] py-24">
           <div className="container px-5 mx-auto">
